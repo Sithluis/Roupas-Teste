@@ -4,89 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roupas</title>
+    <link rel="shortcut icon" href="roupas/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilos/main.css">
     <link rel="stylesheet" href="botStrap/css/bootstrap.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+
 </head>
-<script src="javaScript/main.js"></script>
+<script src="javaScript/mobileMenu.js" defer></script>
+<script src="javaScript/golaPolo.js" defer></script>
 <body>
     <header>
-        <a href="index.html"><img src="roupas/cropped-Logo-CatalogoDrop.png" alt="logo"></a>
+        <a href="index.html"><img src="roupas/Logo-removebg-preview.png" alt="logo"></a>
 
-        <nav>
+            <!-- Botão de menu hamburguer -->
+        <button id="hamburguerButton" class="hamburguer">
+           <i class="fas fa-bars"></i>
+         </button>
+
+        <nav class="desktop-menu">
             <a href="">Início</a>
             <a href="">Contato</a>
         </nav>
+
+           <!--MENU MOBILE-->
+           <div id="mobile" class="mobile-menu">
+              <button id="closeButton" class="close">
+                <i class="fas fa-times"></i>
+              </button>
+             <nav class="moba">
+                <a href="#">Início</a> <br> <br>
+                <a href="#">Contato</a>
+              </nav>
+            </div>
     </header>
 
+ 
+    <!--Catálogo dos Produtos-->
     <div class="container mt-5">
         <div class="row">
           <!-- Linha 1 -->
           <div class="col-md-3 mb-4">
             <div class="card">
-             <a href=""><img src="roupas/golaPolo.jpeg" class="card-img-top" alt="Produto 1"></a>
-              <a href="#">GOLA POLO <br> <p>93 Produtos</p></a>
+             <img src="roupas/golaPolo.jpeg" class="card-img-top" alt="Produto 1">
+             <h5 style="text-align: center;">GOLA POLO</h5>
+             <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-golaPolo">COMPRAR</a>
             </div>
           </div>
+
           <div class="col-md-3 mb-4">
             <div class="card">
-              <a href=""> <img src="roupas/Premium.jpeg" class="card-img-top" alt="Produto 2"></a>
-              <a href="#">IMPORTADA PREMIUM <br> <p>262 Produtos</p></a>
+              <img src="roupas/Premium.jpeg" class="card-img-top" alt="Produto 2">
+              <h5 style="text-align: center;">Produto1</h5>
+              <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-gola">COMPRAR</a>
             </div>
           </div>
+
           <div class="col-md-3 mb-4">
             <div class="card">
-              <a href=""> <img src="roupas/Overside.jpg" class="card-img-top" alt="Produto 3"></a>
-              <a href="#">OVERSIDE <br> <p>1 Produtos</p></a>
+              <img src="roupas/Overside.jpg" class="card-img-top" alt="Produto 3">
+              <h5 style="text-align: center;">Produto1</h5>
+              <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-gola">COMPRAR</a>
             </div>
           </div>
+
           <div class="col-md-3 mb-4">
             <div class="card">
-               <a href=""><img src="roupas/Peruana1.jpeg" class="card-img-top" alt="Produto 4"></a> 
-              <a href="#">PERUANA FIO 40.1 <br> <p>155 Produtos</p></a>
+               <img src="roupas/Peruana1.jpeg" class="card-img-top" alt="Produto 4">
+               <h5 style="text-align: center;">Produto1</h5>
+               <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-gola">COMPRAR</a>
             </div>
           </div>
       
           <!-- Linha 2 -->
           <div class="col-md-3 mb-4">
             <div class="card">
-              <a href=""><img src="roupas/PoloPeruana.jpeg" class="card-img-top" alt="Produto 5"></a>
-              <a href="#">POLO PERUANA <br> <p>69 Produtos</p></a>
+              <img src="roupas/PoloPeruana.jpeg" class="card-img-top" alt="Produto 5">
+              <h5 style="text-align: center;">Produto1</h5>
+              <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-gola">COMPRAR</a>
             </div>
           </div>
+
           <div class="col-md-3 mb-4">
             <div class="card">
-              <a href=""><img src="roupas/ShortLinho.jpeg" class="card-img-top" alt="Produto 6"></a>
-              <a href="#">SHORT LINHO <br> <p>44 Produtos</p></a>
+              <img src="roupas/ShortLinho.jpeg" class="card-img-top" alt="Produto 6">
+              <h5 style="text-align: center;">Produto1</h5>
+              <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-gola">COMPRAR</a>
             </div>
           </div>
+
           <div class="col-md-3 mb-4">
             <div class="card">
-              <a href=""><img src="roupas/Shortpolo.jpeg" class="card-img-top" alt="Produto 7"></a> 
-              <a href="#">SHORT PERUANO <br> <p>55 Produtos</p></a>
+              <img src="roupas/Shortpolo.jpeg" class="card-img-top" alt="Produto 7">
+              <h5 style="text-align: center;">Produto1</h5>
+              <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-gola">COMPRAR</a>
             </div>
           </div>
+
           <div class="col-md-3 mb-4">
             <div class="card">
-              <a href=""><img src="roupas/ShortSarja.jpeg" class="card-img-top" alt="Produto 8"></a> 
-              <a href="#">SHORT SARJA <br> <p>9 Produtos</p></a>
+              <img src="roupas/ShortSarja.jpeg" class="card-img-top" alt="Produto 8">
+              <h5 style="text-align: center;">Produto1</h5>
+              <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-gola">COMPRAR</a>
             </div>
           </div>
       
           <!-- Linha 3 -->
           <div class="col-md-3 mb-4">
             <div class="card">
-              <a href=""><img src="roupas/Súerter.jpg" class="card-img-top" alt="Produto 9"></a>
-              <a href="#">SUÉTER <br> <p>6 Produtos</p></a>
+            <img src="roupas/Súerter.jpg" class="card-img-top" alt="Produto 9">
+            <h5 style="text-align: center;">Produto1</h5>
+              <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-gola">COMPRAR</a>
           </div>
 
+          <!--Imagem Fixa com o link para o whatsapp(Contato do Vendedor)-->
           <a href="#" target="_blank">
             <img src="roupas/what.png" alt="Imagem Fixa" class="fixed-image">
           </a>
         
 
-          <footer><img src="roupas/cropped-Logo-CatalogoDrop.png" alt="logo"> <br>
+          <footer><img src="roupas/Logo-removebg-preview.png" alt="Logo"> <br>
             &copy; 2024 Testes <small>Todos os Direitos Reservados</small>
           </footer>
+
+
+          <!--MODAL criado com botStrap, Recebe os dados e filta as opções do Usuário, Talvez Adcione Endereço-->
+          <div class="modal fade" id="modal-golaPolo" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="purchaseModalLabel">Detalhes do Produto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="checkGolaPolo">
+                            <!-- Campo para o e-mail do cliente -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail:</label>
+                                <input type="email" class="form-control" id="emailPolo" placeholder="Seu e-mail" required>
+                            </div>
+
+                            <!-- Confirmar Item -->
+                            <div class="mb-3">
+                              <label for="colorSelect" class="form-label">Item:</label>
+                              <select class="form-select" id="itemSelectPolo" required>
+                                  <option value="GOLA POLO">GOLA POLO</option>
+                              </select>
+                          </div>
+        
+                            <!-- Seletor de cor -->
+                            <div class="mb-3">
+                                <label for="colorSelect" class="form-label">Cor:</label>
+                                <select class="form-select" id="colorSelectPolo" required>
+                                    <option value="vermelho">Vermelho</option>
+                                    <option value="preto">Preto</option>
+                                    <option value="branco">Branco</option>
+                                </select>
+                            </div>
+        
+                            <!-- Seletor de tamanho -->
+                            <div class="mb-3">
+                                <label for="sizeSelect" class="form-label">Tamanho:</label>
+                                <select class="form-select" id="sizeSelectPolo" required>
+                                    <option value="P">P</option>
+                                    <option value="M">M</option>
+                                    <option value="G">G</option>
+                                    <option value="GG">GG</option>
+                                </select>
+                            </div>
+        
+                            <!-- Botão de compra -->
+                            <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+                        </form>
          
 <script src="botStrap/js/bootstrap.min.js"></script>
 </body>
