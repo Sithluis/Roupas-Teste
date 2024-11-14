@@ -313,3 +313,55 @@ document.getElementById("checkSocialLauren").addEventListener("submit", function
         alert("Erro ao enviar os dados. Por favor, verifique sua conexão e tente novamente.");
     });
 });
+
+document.getElementById("checkteste").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Coleta dos dados do formulário
+    const selectedColorTt = document.getElementById("colorteste").value;
+    const selectedSizeTt = document.getElementById("sizeteste").value;
+    const selectedItemTt = document.getElementById("itemteste").value;
+    const userEmailTt = document.getElementById("emailteste").value;
+    const cityTt = document.getElementById("cityteste").value;
+    const streetTt = document.getElementById("streetteste").value;
+    const numberTt = document.getElementById("numberteste").value;
+    const neighborhoodTt = document.getElementById("neighborhoodteste").value;
+    const postalCodeTt = document.getElementById("postalCodeteste").value;
+    const residenceTypeTt = document.getElementById("residenceTypeteste").value;
+
+    // Constrói a URL do checkout do Kiwify com parâmetros UTM para rastreamento
+    const kiwifyCheckoutUrl = `https://pay.kiwify.com.br/Na2IuMQ?utm_content=cor:${encodeURIComponent(selectedColorTt)}_tamanho:${encodeURIComponent(selectedSizeTt)}`;
+
+    // Envia o formulário para o Formspree
+    fetch("https://formspree.io/f/xgveyzdl", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email: userEmailTt,
+            item: selectedItemTt,
+            cor: selectedColorTt,
+            tamanho: selectedSizeTt,
+            cidade: cityTt,
+            rua: streetTt,
+            numero: numberTt,
+            bairro: neighborhoodTt,
+            cep: postalCodeTt,
+            residencia: residenceTypeTt
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            // Redireciona para o checkout do Kiwify
+            window.location.href = kiwifyCheckoutUrl;
+        } else {
+            console.error("Erro ao enviar os dados:", response.statusText);
+            alert("Houve um problema ao enviar as informações. Tente novamente.");
+        }
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+        alert("Erro ao enviar os dados. Por favor, verifique sua conexão e tente novamente.");
+    });
+});
