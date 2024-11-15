@@ -314,6 +314,58 @@ document.getElementById("checkSocialLauren").addEventListener("submit", function
     });
 });
 
+document.getElementById("checkbSarja").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Coleta dos dados do formulário
+    const selectedColorBs = document.getElementById("colorbSarja").value;
+    const selectedSizeBs = document.getElementById("sizebSarja").value;
+    const selectedItemBs = document.getElementById("itembSarja").value;
+    const userEmailBs = document.getElementById("emailbSarja").value;
+    const cityBs = document.getElementById("citybSarja").value;
+    const streetBs = document.getElementById("streetbSarja").value;
+    const numberBs = document.getElementById("numberbSarja").value;
+    const neighborhoodBs = document.getElementById("neighborhoodbSarja").value;
+    const postalCodeBs = document.getElementById("postalCodebSarja").value;
+    const residenceTypeBs = document.getElementById("residenceTypebSarja").value;
+
+    // Constrói a URL do checkout do Kiwify com parâmetros UTM para rastreamento
+    const kiwifyCheckoutUrl = `https://pay.kiwify.com.br/Na2IuMQ?utm_content=cor:${encodeURIComponent(selectedColorBs)}_tamanho:${encodeURIComponent(selectedSizeBs)}`;
+
+    // Envia o formulário para o Formspree
+    fetch("https://formspree.io/f/xgveyzdl", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email: userEmailBs,
+            item: selectedItemBs,
+            cor: selectedColorBs,
+            tamanho: selectedSizeBs,
+            cidade: cityBs,
+            rua: streetBs,
+            numero: numberBs,
+            bairro: neighborhoodBs,
+            cep: postalCodeBs,
+            residencia: residenceTypeBs
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            // Redireciona para o checkout do Kiwify
+            window.location.href = kiwifyCheckoutUrl;
+        } else {
+            console.error("Erro ao enviar os dados:", response.statusText);
+            alert("Houve um problema ao enviar as informações. Tente novamente.");
+        }
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+        alert("Erro ao enviar os dados. Por favor, verifique sua conexão e tente novamente.");
+    });
+});
+
 document.getElementById("checkteste").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -330,7 +382,7 @@ document.getElementById("checkteste").addEventListener("submit", function(event)
     const residenceTypeTt = document.getElementById("residenceTypeteste").value;
 
     // Constrói a URL do checkout do Kiwify com parâmetros UTM para rastreamento
-    const kiwifyCheckoutUrl = `https://pay.kiwify.com.br/Na2IuMQ?utm_content=cor:${encodeURIComponent(selectedColorTt)}_tamanho:${encodeURIComponent(selectedSizeTt)}`;
+    const kiwifyCheckoutUrl = `https://pay.kiwify.com.br/0pBYVxs?utm_content=cor:${encodeURIComponent(selectedColorTt)}_tamanho:${encodeURIComponent(selectedSizeTt)}`;
 
     // Envia o formulário para o Formspree
     fetch("https://formspree.io/f/xgveyzdl", {
