@@ -261,7 +261,6 @@ document.getElementById("checkBasicaLacoste").addEventListener("submit", functio
     });
 });
 
-//SOCIAL RALPH LAUREN
 document.getElementById("checkSocialLauren").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -278,7 +277,7 @@ document.getElementById("checkSocialLauren").addEventListener("submit", function
     const residenceTypeSl = document.getElementById("residenceTypeSocialL").value;
 
     // Constrói a URL do checkout do Kiwify com parâmetros UTM para rastreamento
-    const kiwifyCheckoutUrl = `https://pay.kiwify.com.br/aiSbkFy?utm_content=cor:${encodeURIComponent(selectedColorSl)}_tamanho:${encodeURIComponent(selectedSizeSl)}`;
+    const infinitePayCheckoutUrl = "https://loja.infinitepay.io/jnbneirton/vmg8865-social-ralph-lauren";
 
     // Envia o formulário para o Formspree
     fetch("https://formspree.io/f/xgveyzdl", {
@@ -302,7 +301,7 @@ document.getElementById("checkSocialLauren").addEventListener("submit", function
     .then(response => {
         if (response.ok) {
             // Redireciona para o checkout do Kiwify
-            window.location.href = kiwifyCheckoutUrl;
+            window.location.href = infinitePayCheckoutUrl;
         } else {
             console.error("Erro ao enviar os dados:", response.statusText);
             alert("Houve um problema ao enviar as informações. Tente novamente.");
