@@ -265,16 +265,11 @@ document.getElementById("checkSocialLauren").addEventListener("submit", function
     event.preventDefault();
 
     // Coleta dos dados do formulário
+    const nomeSl = document.getElementById("nomeSocialL").value;
     const selectedColorSl = document.getElementById("colorSocialL").value;
     const selectedSizeSl = document.getElementById("sizeSocialL").value;
     const selectedItemSl = document.getElementById("itemSocialL").value;
     const userEmailSl = document.getElementById("emailSocialL").value;
-    const citySl = document.getElementById("citySocialL").value;
-    const streetSl = document.getElementById("streetSocialL").value;
-    const numberSl = document.getElementById("numberSocialL").value;
-    const neighborhoodSl = document.getElementById("neighborhoodSocialL").value;
-    const postalCodeSl = document.getElementById("postalCodeSocialL").value;
-    const residenceTypeSl = document.getElementById("residenceTypeSocialL").value;
 
     // Constrói a URL do checkout do Kiwify com parâmetros UTM para rastreamento
     const infinitePayCheckoutUrl = "https://loja.infinitepay.io/jnbneirton/vmg8865-social-ralph-lauren";
@@ -286,16 +281,11 @@ document.getElementById("checkSocialLauren").addEventListener("submit", function
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
+            nome: nomeSl,
             email: userEmailSl,
             item: selectedItemSl,
             cor: selectedColorSl,
-            tamanho: selectedSizeSl,
-            cidade: citySl,
-            rua: streetSl,
-            numero: numberSl,
-            bairro: neighborhoodSl,
-            cep: postalCodeSl,
-            residencia: residenceTypeSl
+            tamanho: selectedSizeSl
         })
     })
     .then(response => {
